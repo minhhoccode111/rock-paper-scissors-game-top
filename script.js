@@ -77,6 +77,6 @@ function playRound(playerSelection, computerSelection) {
   return string;
 }
 
-const playerSelection = "rock";
+const playerSelection = prompt("What do you choose?");
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+alert(playRound(playerSelection, computerSelection));
