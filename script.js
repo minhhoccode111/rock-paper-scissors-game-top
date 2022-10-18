@@ -12,8 +12,7 @@ function playRound(playerSelection, computerSelection) {
     " Rock beats Scissors",
     " Scissors beats Paper",
   ];
-  let casePlayerSelection = playerSelection.toLowerCase();
-  if (casePlayerSelection == "rock") {
+  if (playerSelection == "rock") {
     switch (computerSelection) {
       case "rock":
         string = result[0];
@@ -25,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
         string = result[1] + sentence[1];
         break;
     }
-  } else if (casePlayerSelection == "paper") {
+  } else if (playerSelection == "paper") {
     switch (computerSelection) {
       case "paper":
         string = result[0];
@@ -37,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
         string = result[2] + sentence[2];
         break;
     }
-  } else if (casePlayerSelection == "scissors") {
+  } else if (playerSelection == "scissors") {
     switch (computerSelection) {
       case "scissors":
         string = result[0];
@@ -56,7 +55,8 @@ function playRound(playerSelection, computerSelection) {
 }
 
 const chooseWeapon = () => {
-  const answer = prompt("What do you choose?");
+  let answer = prompt("What do you choose?").toLowerCase();
+  answer == null ? (answer = "") : (answer = answer);
   return answer;
 };
 const play = () => {
