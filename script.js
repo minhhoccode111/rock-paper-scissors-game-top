@@ -1,9 +1,17 @@
 console.log("Hello World");
-
 const getComputerChoice = () => {
   const choices = ["rock", "paper", "scissors"];
   return choices[Math.floor(Math.random() * 3)];
 };
+// defined function to get computer choice
+const getPlayerChoice = () => {
+  let answer = prompt("What do you choose?").toLowerCase();
+  if (answer == null) {
+    answer = "";
+  }
+  return answer;
+};
+// defined function to get player choice
 function playRound(playerSelection, computerSelection) {
   let string = "";
   let result = ["Tie Game!", "You Win!", "You Lose!"];
@@ -53,14 +61,38 @@ function playRound(playerSelection, computerSelection) {
   }
   return string;
 }
-
-const chooseWeapon = () => {
-  let answer = prompt("What do you choose?").toLowerCase();
-  answer == null ? (answer = "") : (answer = answer);
-  return answer;
-};
-const play = () => {
-  const playerSelection = chooseWeapon();
-  const computerSelection = getComputerChoice();
-  alert(playRound(playerSelection, computerSelection));
-};
+// defined function to play 1 round of the game
+function play() {
+  alert("You will play 5 rounds, first to 3 win.");
+  for (var i = 1, p = 0, c = 0; i < 6; i++) {
+    alert("Round " + i);
+    document.getElementById("player").innerHTML = p;
+    document.getElementById("computer").innerHTML = c;
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    const a = playRound(playerSelection, computerSelection);
+    alert(a);
+    const aSlice = a.slice(4, 5);
+    console.log(aSlice);
+    if (a == "Please choose valid option." || aSlice === "G") {
+      i--; //mean don't count that round
+    } else if (aSlice === "W") {
+      p++;
+      if (p > 3) {
+        return alert("Yayyy, You are the Winner!");
+      }
+      document.getElementById("player").innerHTML = p;
+      document.getElementById("computer").innerHTML = c;
+    } else if (aSlice === "L") {
+      c++;
+      if (c > 3) {
+        return alert("Oh noo, You are the Loser!");
+      }
+      document.getElementById("player").innerHTML = p;
+      document.getElementById("computer").innerHTML = c;
+    }
+  }
+  document.getElementById("player").innerHTML = p;
+  document.getElementById("computer").innerHTML = c;
+  // return;
+}
