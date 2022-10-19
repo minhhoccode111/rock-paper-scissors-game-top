@@ -1,4 +1,5 @@
 console.log("Hello World");
+("use strict");
 const getComputerChoice = () => {
   const choices = ["rock", "paper", "scissors"];
   return choices[Math.floor(Math.random() * 3)];
@@ -66,8 +67,6 @@ function play() {
   alert("You will play 5 rounds, first to 3 win.");
   for (var i = 1, p = 0, c = 0; i < 6; i++) {
     alert("Round " + i);
-    document.getElementById("player").innerHTML = p;
-    document.getElementById("computer").innerHTML = c;
     const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
     const a = playRound(playerSelection, computerSelection);
@@ -78,18 +77,18 @@ function play() {
       i--; //mean don't count that round
     } else if (aSlice === "W") {
       p++;
+      document.getElementById("player").innerHTML = p;
+      document.getElementById("computer").innerHTML = c;
       if (p > 3) {
         return alert("Yayyy, You are the Winner!");
       }
-      document.getElementById("player").innerHTML = p;
-      document.getElementById("computer").innerHTML = c;
     } else if (aSlice === "L") {
       c++;
+      document.getElementById("player").innerHTML = p;
+      document.getElementById("computer").innerHTML = c;
       if (c > 3) {
         return alert("Oh noo, You are the Loser!");
       }
-      document.getElementById("player").innerHTML = p;
-      document.getElementById("computer").innerHTML = c;
     }
   }
   document.getElementById("player").innerHTML = p;
