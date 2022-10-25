@@ -65,7 +65,8 @@ function playRound(playerSelection, computerSelection) {
 // defined function to play 1 round of the game
 function play() {
   alert("You will play 5 rounds, first to 3 win.");
-  for (var i = 1, p = 0, c = 0; i < 6; i++) {
+  for (var i = 1, p = 0, c = 0; i < 3; i++) {
+    //remove 5rounds gameplay
     alert("Round " + i);
     const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
