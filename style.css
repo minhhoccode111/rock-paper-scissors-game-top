@@ -19,9 +19,9 @@ body {
 }
 
 .gradient-background {
-  background: linear-gradient(210deg, #5025ec, #c235b9, #4e45a0);
+  background: linear-gradient(210deg, #ec7f25, #c235b9, #ffffff);
   background-size: 300% 300%;
-  animation: gradient-animation 10s ease infinite;
+  animation: gradient-animation 3s ease infinite;
 }
 
 @keyframes gradient-animation {
@@ -34,4 +34,78 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+h1 {
+  color: white;
+}
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+}
+.layer1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+span.auto-type {
+  text-align: center;
+  font-size: 2.8rem;
+  color: white;
+  font-weight: bold;
+}
+button.yesBtn {
+  /* opacity: 0; */
+  max-width: 24rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  opacity: 1;
+}
+.layer2 {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s;
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+span.auto-type-2 {
+}
+.imgCtn {
+  /* display: none; */
+  max-width: 40rem;
+  border: 1px solid red;
+}
+.img {
+  width: 80%;
+  overflow: none;
+  display: block;
+  margin: 0 auto;
 }
