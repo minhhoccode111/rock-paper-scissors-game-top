@@ -5,6 +5,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font: normal normal normal 1.8rem/1.5 "Shadows Into Light", cursive,
+    sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
 }
 html {
   font: normal normal normal 10px/1.5 "Shadows Into Light", cursive, sans-serif;
@@ -36,76 +40,64 @@ body {
   }
 }
 
-h1 {
-  color: white;
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 10%;
-}
-.layer1 {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 10%;
-
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  padding-top: 2rem;
 }
-span.auto-type {
-  text-align: center;
-  font-size: 2.8rem;
-  color: white;
-  font-weight: bold;
-}
-button.yesBtn {
-  /* opacity: 0; */
-  max-width: 24rem;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  opacity: 1;
-}
-.layer2 {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1s;
-  max-width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  z-index: 2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-span.auto-type-2 {
-}
-.imgCtn {
-  /* display: none; */
-  max-width: 40rem;
-  border: 1px solid red;
-}
-.img {
+.section1 {
   width: 80%;
-  overflow: none;
-  display: block;
-  margin: 0 auto;
+  max-width: 80rem;
+}
+.section1 > * {
+  margin-top: 2rem;
+}
+#wrapper h1 {
+  font-size: 6rem;
+  animation-delay: 1.5s;
+}
+.p2 {
+  animation-delay: 4s;
+  font-size: 3rem;
+}
+.p3 {
+  animation-delay: 6.5s;
+  font-size: 3rem;
+}
+#section1 .p4 {
+  animation-delay: 1.5s;
+  font-size: 4rem;
+  width: 45%;
+  min-width: 20rem;
+}
+#section1 .p5 {
+  animation-delay: 2s;
+  font-size: 4rem;
+  width: 45%;
+  min-width: 20rem;
+}
+#wrapper h1,
+.p2,
+.p3,
+.p4,
+.p5 {
+  font-weight: bolder;
+}
+
+button.yesBtn {
+}
+button.noBtn {
 }

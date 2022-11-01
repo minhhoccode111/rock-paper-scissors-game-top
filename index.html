@@ -29,24 +29,41 @@
       defer
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <script src="./script.js" defer></script>
   </head>
   <body class="gradient-background">
     <div id="wrapper" class="container-fluid">
-      <div class="layer1">
-        <span class="auto-type"></span>
-        <button type="button" class="btn btn-primary yesBtn">YES</button>
-        <div class="layer2">
-          <span class="auto-type-2">FIRST TO 5, WIN THE GAME...</span>
-          <div class="imgCtn">
-            <img
-              src="./assets/img/1200px-Rock-paper-scissors.svg.png"
-              alt="Rock Paper Scissors game"
-              class="img-fluid img"
-            />
-          </div>
-        </div>
-      </div>
+      <section id="section1" class="section1">
+        <h1 class="p1 animate__animated animate__rotateInDownLeft">
+          HUMAN VS AI
+        </h1>
+        <p class="p2 animate__animated animate__rotateInDownLeft">
+          TO FIND OUT THE LAST MAN (OR AI ?) STANDING !!!
+        </p>
+        <p class="animate__animated animate__rotateInDownLeft p3">
+          WILL YOU FIGHT, FOR HUMAN ???
+        </p>
+
+        <button
+          type="button"
+          class="animate__animated animate__lightSpeedInLeft p4 btn btn-lg btn-success yesBtn"
+        >
+          YES
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-danger noBtn animate__animated btn-lg animate__lightSpeedInRight p5"
+        >
+          MAYBE NOT
+        </button>
+      </section>
+      <section id="section2" class="section2"></section>
+      <section id="section3" class="section3"></section>
     </div>
   </body>
 </html>

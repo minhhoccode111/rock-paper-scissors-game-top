@@ -98,23 +98,3 @@ console.log("Hello World");
 // }
 // const sentence = document.querySelector("#sentence");
 const wrapper = document.querySelector("#wrapper");
-// auto-type
-let typed = new Typed(".auto-type", {
-  strings: [
-    "HUMAN VS AI...",
-    "IN THE VERY LAST WAR...",
-    "TO FIND OUT THE GREATEST WARRIOR...",
-    "WILL YOU BE THE ONE ?",
-  ],
-  typeSpeed: 90,
-  backSpeed: 14,
-  loop: false,
-});
-// auto-type-2
-const yesBtn = document.querySelector(".yesBtn");
-const showLayer2 = () => {
-  const layer2 = document.querySelector(".layer2");
-  layer2.style.cssText = "opacity:1;pointer-events:auto";
-};
-
-yesBtn.addEventListener("click", showLayer2());
