@@ -3,7 +3,7 @@
 ::before,
 ::after {
   padding: 0;
-  margin: 0;
+  margin: 0 0 1.2rem !important;
   box-sizing: border-box;
   font: normal normal normal 1.8rem/1.5 "Shadows Into Light", cursive,
     sans-serif;
@@ -23,7 +23,7 @@ body {
 }
 
 .gradient-background {
-  background: linear-gradient(210deg, #ec7f25, #c235b9, #ffffff);
+  background: linear-gradient(210deg, #000000, #254450, #313131);
   background-size: 300% 300%;
   animation: gradient-animation 3s ease infinite;
 }
@@ -51,40 +51,55 @@ body {
   align-items: center;
   justify-content: center;
 }
+a {
+  all: unset;
+}
+ul,
+li {
+  list-style-type: none;
+}
 #wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 2rem;
+  width: 100vw;
+  height: 100vh;
 }
-.section1 {
+.section1,
+.section2,
+.section3 {
   width: 80%;
   max-width: 80rem;
 }
 .section1 > * {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 #wrapper h1 {
   font-size: 6rem;
-  animation-delay: 1.5s;
+  animation-delay: 1s;
 }
 .p2 {
-  animation-delay: 4s;
+  animation-delay: 2.5s;
   font-size: 3rem;
 }
 .p3 {
-  animation-delay: 6.5s;
+  animation-delay: 4s;
+  font-size: 3rem;
+}
+.p3-1 {
+  animation-delay: 5s;
   font-size: 3rem;
 }
 #section1 .p4 {
-  animation-delay: 1.5s;
+  animation-delay: 6s;
   font-size: 4rem;
   width: 45%;
   min-width: 20rem;
 }
 #section1 .p5 {
-  animation-delay: 2s;
+  animation-delay: 6.7s;
   font-size: 4rem;
   width: 45%;
   min-width: 20rem;
@@ -92,12 +107,64 @@ body {
 #wrapper h1,
 .p2,
 .p3,
+.p3-1,
 .p4,
 .p5 {
   font-weight: bolder;
 }
-
+.btn {
+  color: white;
+  font-size: 4rem !important;
+}
 button.yesBtn {
 }
 button.noBtn {
+}
+.section1 {
+  /* display: none; */
+}
+#section1 .p5 {
+  animation-delay: 6.7s;
+  font-size: 4rem;
+  width: 45%;
+  min-width: 20rem;
+}
+.section2 {
+  opacity: 1;
+  pointer-events: all;
+}
+.p7,
+.p8,
+button.p9 {
+  color: white;
+  font-size: 4rem !important;
+  width: 30%;
+  min-width: 20rem;
+}
+.p7,
+.p8,
+.p9 {
+  animation-delay: 1s;
+}
+
+.section3 {
+  opacity: 1;
+  pointer-events: all;
+}
+.backBtn {
+  /* position: fixed; */
+  z-index: 100;
+  bottom: 5%;
+  left: 5%;
+}
+.surrBtn {
+  /* position: fixed; */
+  z-index: 100;
+  bottom: 5%;
+  right: 5%;
+}
+
+.playPage {
+  justify-content: space-between !important;
+  align-items: space-between !important;
 }

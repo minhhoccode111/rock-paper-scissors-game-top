@@ -98,3 +98,30 @@ console.log("Hello World");
 // }
 // const sentence = document.querySelector("#sentence");
 const wrapper = document.querySelector("#wrapper");
+const yesBtn = document.querySelector(".yesBtn");
+yesBtn.addEventListener("click", () => {
+  const section1 = document.querySelector(".section1");
+  section1.classList.add("animate__rotateOut");
+  setTimeout(2000, nonePointerEvents(1));
+});
+const nonePointerEvents = (n) => {
+  switch (n) {
+    case 1:
+      const section1 = document.querySelector(".section1");
+      section1.style.cssText = "opacity:0;pointer-events:none";
+      break;
+    case 2:
+      const section2 = document.querySelector(".section2");
+      section2.style.cssText = "opacity:0;pointer-events:none";
+
+      break;
+    case 3:
+      const section3 = document.querySelector(".section2");
+      section3.style.cssText = "opacity:0;pointer-events:none";
+
+      break;
+    default:
+      break;
+    // code block
+  }
+};
