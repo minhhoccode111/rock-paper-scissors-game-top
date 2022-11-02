@@ -1,0 +1,13 @@
+.p4 {
+  animation-delay: 6s;
+}
+.p5 {
+  animation-delay: 6.4s;
+}
+.ctn-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}

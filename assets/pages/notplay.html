@@ -4,41 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock Paper Scissors</title>
-
-    <link rel="stylesheet" href="style.css" />
+    <title>Not playing</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <!-- file css general -->
+    <link rel="stylesheet" href="../css/notplay.css" />
+    <!-- file css specific -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="assets/icons/favicon.ico" />
-    <!-- CSS only -->
+    <!-- links google fonts -->
+    <link rel="icon" href="../icons/favicon.ico" />
+    <!-- GIF image -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <!-- JavaScript Bundle with Popper -->
+    <!-- link bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
       defer
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <!-- link bootstrap -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-
-    <script src="./script.js" defer></script>
+    <!-- link animate.css -->
   </head>
   <body class="gradient-background">
-    <div id="wrapper" class="container-fluid">
-      <section id="section3" class="section3 animate__animated">
+    <div id="wrapper" class="container-fluid flex-column">
+      <section id="section-notplay" class="section-notplay">
         <h1 class="p1 animate__animated animate__rotateInDownLeft">
           OH NOOOO ...
         </h1>
@@ -51,15 +53,24 @@
             WHO WOULD ?
           </p>
         </div>
-
-        <a href="index.html"
-          ><button
-            type="button"
-            class="animate__animated animate__lightSpeedInLeft p4 btn btn-lg btn-success yesBtn"
+        <div class="ctn-buttons">
+          <a href="./../../index.html"
+            ><button
+              type="button"
+              class="animate__animated animate__lightSpeedInLeft p4 btn btn-lg btn-success yesBtn"
+            >
+              CHOOSE AGAIN ! &#9989;
+            </button></a
           >
-            CHOOSE AGAIN !
-          </button></a
-        >
+          <a href="./lose.html">
+            <button
+              type="button"
+              class="btn btn-danger noBtn animate__animated btn-lg animate__lightSpeedInRight p5"
+            >
+              SURRENDER &#128148;
+            </button>
+          </a>
+        </div>
       </section>
     </div>
   </body>
