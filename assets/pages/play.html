@@ -45,7 +45,9 @@
           FIRST TO 5 WIN THE GAME!
         </h1>
         <div class="row">
-          <p class="animate__animated animate__rotateInDownLeft p3">ROUND 1</p>
+          <h2 class="animate__animated animate__rotateInDownLeft p3">
+            ROUND 1
+          </h2>
           <p class="animate__animated animate__rotateInDownLeft p3-1">
             CHOOSE YOUR WEAPON:
           </p>
@@ -53,33 +55,54 @@
         <div class="ctn-buttons-weapon">
           <button
             type="button"
-            class="btn btn-success p4 animate__animated animate__lightSpeedInLeft btn-lg rockBtn"
+            class="btn btn-success p4 animate__animated animate__bounceInLeft btn-lg rockBtn"
           >
             &#9994;
           </button>
           <button
             type="button"
-            class="btn btn-danger p5 animate__animated animate__lightSpeedInLeft btn-lg paperBtn"
+            class="btn btn-danger p5 animate__animated animate__bounceInDown btn-lg paperBtn"
           >
             &#9995;
           </button>
           <button
             type="button"
-            class="btn btn-warning p6 animate__animated animate__lightSpeedInLeft btn-lg scissorsBtn"
+            class="btn btn-info p6 animate__animated animate__bounceInRight btn-lg scissorsBtn"
           >
             &#9996;
           </button>
         </div>
+        <div class="ctn-results">
+          <div class="label label-you animate__animated animate__bounceInLeft">
+            You
+          </div>
+          <div class="label label-ai animate__animated animate__bounceInRight">
+            AI
+          </div>
+          <div
+            id="player-score"
+            class="score score-you animate__animated animate__bounceInLeft"
+          >
+            0
+          </div>
+          <div
+            id="ai-score"
+            class="score score-ai animate__animated animate__bounceInRight"
+          >
+            0
+          </div>
+          <div class="results"></div>
+        </div>
       </section>
       <footer class="footer">
-        <a href="index.html">
+        <a href="../../index.html">
           <button type="button" class="btn btn-secondary btn-lg backBtn">
-            BACK TO INTRO PAGE
+            BACK TO HOME PAGE
           </button>
         </a>
         <a href="notplay.html">
           <button type="button" class="btn btn-secondary btn-lg surrBtn">
-            SURRENDER BECAUSE AI IS TOO STRONG :)))
+            SURRENDER BECAUSE <strong>AI</strong> IS TOO STRONG :)))
           </button>
         </a>
       </footer>

@@ -3,12 +3,13 @@
 ::before,
 ::after {
   padding: 0;
-  margin: 0 0 1.2rem !important;
+  margin: 0 0 1.2rem;
   box-sizing: border-box;
   font: normal normal normal 1.8rem/1.5 "Shadows Into Light", cursive,
     sans-serif;
   color: rgb(255, 255, 255);
   text-align: center;
+  overflow: hidden;
 }
 html {
   font: normal normal normal 10px/1.5 "Shadows Into Light", cursive, sans-serif;
@@ -68,8 +69,8 @@ li {
   max-width: 80rem;
   padding: 6rem 0 0;
 }
-#wrapper section * {
-  margin-bottom: 3.6rem !important;
+#wrapper section > * {
+  margin-bottom: 2.8rem !important;
 }
 #wrapper section h1 {
   font-size: 6rem;
