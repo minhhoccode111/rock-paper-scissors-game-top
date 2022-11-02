@@ -1,3 +1,14 @@
+.ctn-buttons-weapon {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+#wrapper section .p4,
+#wrapper section .p5,
+#wrapper section .p6 {
+  font-size: 6rem;
+  overflow: hidden;
+}
 #wrapper footer {
   position: fixed;
   bottom: 0;

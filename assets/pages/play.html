@@ -39,7 +39,7 @@
     <!-- link animate.css -->
   </head>
   <body class="gradient-background">
-    <div id="wrapper" class="column playPage container-fluid">
+    <div id="wrapper" class="flex-column playPage container-fluid">
       <section id="section-play" class="section-play animate__animated">
         <h1 class="p1 animate__animated animate__rotateInDownLeft">
           FIRST TO 5 WIN THE GAME!
@@ -50,24 +50,26 @@
             CHOOSE YOUR WEAPON:
           </p>
         </div>
-        <button
-          type="button"
-          class="btn btn-success p4 animate__animated animate__lightSpeedInLeft btn-lg rockBtn"
-        >
-          Rock
-        </button>
-        <button
-          type="button"
-          class="btn btn-danger p5 animate__animated animate__lightSpeedInLeft btn-lg rockBtn"
-        >
-          Paper
-        </button>
-        <button
-          type="button"
-          class="btn btn-warning p5 animate__animated animate__lightSpeedInLeft btn-lg rockBtn"
-        >
-          Scissors
-        </button>
+        <div class="ctn-buttons-weapon">
+          <button
+            type="button"
+            class="btn btn-success p4 animate__animated animate__lightSpeedInLeft btn-lg rockBtn"
+          >
+            &#9994;
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger p5 animate__animated animate__lightSpeedInLeft btn-lg paperBtn"
+          >
+            &#9995;
+          </button>
+          <button
+            type="button"
+            class="btn btn-warning p6 animate__animated animate__lightSpeedInLeft btn-lg scissorsBtn"
+          >
+            &#9996;
+          </button>
+        </div>
       </section>
       <footer class="footer">
         <a href="index.html">

@@ -1,6 +1,11 @@
 #wrapper section .btn-ctn {
   width: 100%;
 }
+#wrapper section .p4,
+#wrapper section .p5 {
+  font-size: 4rem;
+  width: 45%;
+}
 .p4 {
   animation-delay: 6s;
 }

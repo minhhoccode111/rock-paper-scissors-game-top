@@ -87,11 +87,7 @@ li {
   animation-delay: 5s;
   font-size: 3rem;
 }
-#wrapper section .p4,
-#wrapper section .p5 {
-  font-size: 4rem;
-  width: 45%;
-}
+
 #wrapper section h1,
 .p2,
 .p3,
