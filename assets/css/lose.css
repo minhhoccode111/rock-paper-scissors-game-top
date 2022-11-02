@@ -1,0 +1,8 @@
+.footer .backBtn {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
+#wrapper section .p4 {
+  animation-delay: 6s;
+}

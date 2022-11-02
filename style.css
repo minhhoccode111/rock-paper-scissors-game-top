@@ -76,17 +76,18 @@ li {
   font-size: 6rem;
   animation-delay: 1s;
 }
+#wrapper section p,
+#wrapper section span {
+  font-size: 3rem;
+}
 #wrapper section .p2 {
   animation-delay: 2.5s;
-  font-size: 3rem;
 }
 #wrapper section .p3 {
   animation-delay: 4s;
-  font-size: 3rem;
 }
 #wrapper section .p3-1 {
   animation-delay: 5s;
-  font-size: 3rem;
 }
 
 #wrapper section h1,

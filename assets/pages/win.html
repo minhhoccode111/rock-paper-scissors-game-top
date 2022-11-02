@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Play page</title>
+    <title>Win page</title>
     <link rel="stylesheet" href="../../style.css" />
     <!-- file css general -->
-    <link rel="stylesheet" href="../css/play.css" />
+    <link rel="stylesheet" href="../css/lose.css" />
     <!-- file css specific -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,70 +39,32 @@
     <!-- link animate.css -->
   </head>
   <body class="gradient-background">
-    <div id="wrapper" class="flex-column playPage container-fluid">
-      <section id="section-play" class="section-play">
+    <div id="wrapper" class="flex-column container-fluid">
+      <section id="section-lose" class="section-lose">
         <h1 class="p1 animate__animated animate__rotateInDownLeft">
-          FIRST TO 5 WIN THE GAME!
+          HELL YEE ! YOU'VE WON !!!
         </h1>
         <div class="row">
-          <p class="animate__animated animate__rotateInDownLeft p3">
-            ROUND <span class="round-count">1</span>
-          </p>
+          <h2 class="animate__animated animate__rotateInDownLeft p3">
+            LET'S PLAy ONE MORE GAME
+          </h2>
           <p class="animate__animated animate__rotateInDownLeft p3-1">
-            CHOOSE YOUR WEAPON:
+            SHALL WE ?
           </p>
         </div>
-        <div class="ctn-buttons-weapon">
-          <button
+        <a href="./play.html"
+          ><button
             type="button"
             class="btn btn-success p4 animate__animated animate__bounceInLeft btn-lg rockBtn"
           >
-            &#9994;
-          </button>
-          <button
-            type="button"
-            class="btn btn-danger p5 animate__animated animate__bounceInDown btn-lg paperBtn"
-          >
-            &#9995;
-          </button>
-          <button
-            type="button"
-            class="btn btn-info p6 animate__animated animate__bounceInRight btn-lg scissorsBtn"
-          >
-            &#9996;
-          </button>
-        </div>
-        <div class="ctn-results">
-          <div class="label label-you animate__animated animate__bounceInLeft">
-            You
-          </div>
-          <div class="label label-ai animate__animated animate__bounceInRight">
-            AI
-          </div>
-          <div
-            id="player-score"
-            class="score score-you animate__animated animate__bounceInLeft"
-          >
-            0
-          </div>
-          <div
-            id="ai-score"
-            class="score score-ai animate__animated animate__bounceInRight"
-          >
-            0
-          </div>
-          <div class="results"></div>
-        </div>
+            PLAY AGAIN !
+          </button></a
+        >
       </section>
       <footer class="footer">
         <a href="../../index.html">
           <button type="button" class="btn btn-secondary btn-lg backBtn">
             BACK TO HOME PAGE
-          </button>
-        </a>
-        <a href="lose.html">
-          <button type="button" class="btn btn-secondary btn-lg surrBtn">
-            SURRENDER BECAUSE <strong>AI</strong> IS TOO STRONG :)))
           </button>
         </a>
       </footer>
