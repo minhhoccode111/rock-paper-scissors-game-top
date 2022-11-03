@@ -38,7 +38,8 @@
     />
     <!-- link animate.css -->
   </head>
-  <body class="gradient-background">
+  <body class="gradient-background" onload="play() ">
+    <!--run the play() function when the page is loaded-->
     <div id="wrapper" class="flex-column playPage container-fluid">
       <section id="section-play" class="section-play">
         <h1 class="p1 animate__animated animate__rotateInDownLeft">
@@ -46,7 +47,7 @@
         </h1>
         <div class="row">
           <p class="animate__animated animate__rotateInDownLeft p3">
-            ROUND <span class="round-count">1</span>
+            ROUND <span class="round-count"></span>
           </p>
           <p class="animate__animated animate__rotateInDownLeft p3-1">
             CHOOSE YOUR WEAPON:
@@ -55,18 +56,24 @@
         <div class="ctn-buttons-weapon">
           <button
             type="button"
+            value="rock"
+            name="weapon"
             class="btn btn-success p4 animate__animated animate__bounceInLeft btn-lg rockBtn"
           >
             &#9994;
           </button>
           <button
             type="button"
+            value="paper"
+            name="weapon"
             class="btn btn-danger p5 animate__animated animate__bounceInDown btn-lg paperBtn"
           >
             &#9995;
           </button>
           <button
             type="button"
+            value="scissors"
+            name="weapon"
             class="btn btn-info p6 animate__animated animate__bounceInRight btn-lg scissorsBtn"
           >
             &#9996;
@@ -107,5 +114,7 @@
         </a>
       </footer>
     </div>
+    <script src="./../script/script.js" defer></script>
+    <script src="./../script/skip.js" defer></script>
   </body>
 </html>

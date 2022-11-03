@@ -22,7 +22,7 @@
 .ctn-results {
   display: grid;
   grid-template-columns: repeat(2, minmax(40%, 30rem));
-  grid-template-rows: repeat(3, 10rem);
+  grid-template-rows: 10rem 10rem 1fr;
   align-items: center;
   justify-content: center;
 }
@@ -47,4 +47,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+/* remove animation delay to work with js */
+#wrapper section.section-play * {
+  animation-delay: 0s !important;
 }
