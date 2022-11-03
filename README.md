@@ -14,3 +14,4 @@ What I can do better :
 - use JS DOM to add animation switch page
 - use only 1 or 2 pages and use JS DOM to notify events to user (not to create multiple pages and notify user by link them to another pages)
 
+<a href="https://minhhoccode111.github.io/rock-paper-scissors/">Live App</a>
