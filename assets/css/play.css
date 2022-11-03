@@ -49,6 +49,6 @@
   align-items: center;
 }
 /* remove animation delay to work with js */
-#wrapper section.section-play * {
+/* #wrapper section.section-play * {
   animation-delay: 0s !important;
-}
+} */
