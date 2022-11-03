@@ -13,5 +13,8 @@ use setInterval and forEach() to do animation print something word by word
 What I can do better :
 - use JS DOM to add animation switch page
 - use only 1 or 2 pages and use JS DOM to notify events to user (not to create multiple pages and notify user by link them to another pages)
+- and a lot more stuffs but I'll leave it for later
 
 <a href="https://minhhoccode111.github.io/rock-paper-scissors/">Live App</a>
+![image](https://user-images.githubusercontent.com/107298518/199640827-f27c5dc8-d686-470b-bac1-6150a25a4322.png)
+
