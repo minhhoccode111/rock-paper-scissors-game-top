@@ -1,4 +1,4 @@
-# rock-paper-scissors
+# Rock Paper Scissors The Odin Project
 
 practice javaScript DOM with rock paper scissors game vs computer
 what I've learned :
@@ -18,9 +18,9 @@ What I can do better :
 - use only 1 or 2 pages and use JS DOM to notify events to user (not to create multiple pages and notify user by link them to another pages)
 - and a lot more stuffs but I'll leave it for later
 
-<a href="https://minhhoccode111.github.io/rock-paper-scissors/">Live App</a>
+<a href="https://minhhoccode111.github.io/rock-paper-scissors-game-top/">Live App</a>
 ![image](https://user-images.githubusercontent.com/107298518/199640827-f27c5dc8-d686-470b-bac1-6150a25a4322.png)
 
-[View all my projects Live demo links](https://minhhoccode111.github.io/allProjectssLiveDemo/)
+[View all projects' live demos](https://minhhoccode111.github.io/all-projects-live-demos/) 
 
-[View this project Live demo](https://minhhoccode111.github.io/rockPaperScissorsGameTOP/)
+[Rock Paper Scissors Game TOP](https://minhhoccode111.github.io/rock-paper-scissors-game-top/)
