@@ -1,46 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- file css general -->
-    <link rel="stylesheet" href="./assets/css/index.css" />
-    <!-- file css specific -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
-    <!-- links google fonts -->
     <link rel="icon" href="assets/icons/favicon.ico" />
-    <!-- GIF image -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <!-- link bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
       defer
     ></script>
-    <!-- link bootstrap -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <!-- link animate.css -->
   </head>
   <body class="gradient-background">
     <div id="wrapper" class="container-fluid flex-column">
-      <section id="section-index" class="section-index">
+      <!-- Home Page Section -->
+      <section id="section-home" class="section-home">
         <h1 class="p1 animate__animated animate__rotateInDownLeft">
           HUMAN VS AI
         </h1>
@@ -54,25 +47,178 @@
           FOR HUMAN ???
         </p>
         <div class="btn-ctn">
-          <a href="./assets/pages/play.html">
-            <button
-              type="button"
-              class="animate__animated animate__lightSpeedInLeft p4 btn btn-lg btn-success yesBtn"
-            >
-              YES &#9989;
-            </button>
-          </a>
-          <a href="./assets/pages/notplay.html">
-            <button
-              type="button"
-              class="btn btn-danger noBtn animate__animated btn-lg animate__lightSpeedInRight p5"
-            >
-              MAYBE NOT &#10060;
-            </button>
-          </a>
+          <button
+            type="button"
+            class="animate__animated animate__lightSpeedInLeft p4 btn btn-lg btn-success yesBtn"
+            id="play-game-btn"
+          >
+            YES &#9989;
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger noBtn animate__animated btn-lg animate__lightSpeedInRight p5"
+            id="not-play-game-btn"
+          >
+            MAYBE NOT &#10060;
+          </button>
         </div>
       </section>
+
+      <!-- Not Playing Section -->
+      <section id="section-notplay" class="section-notplay hidden">
+        <h1 class="p1 animate__animated animate__rotateInDownLeft">
+          OH NOOOO ...
+        </h1>
+        <div class="row">
+          <p class="animate__animated animate__rotateInDownLeft p3">
+            IF YOU DON'T FIGHT FOR HUMAN,
+          </p>
+          <p class="animate__animated animate__rotateInDownLeft p3-1">
+            WHO WOULD ?
+          </p>
+        </div>
+        <div class="ctn-buttons">
+          <button
+            type="button"
+            class="animate__animated animate__lightSpeedInLeft p4 btn btn-lg btn-success yesBtn"
+            id="choose-again-btn"
+          >
+            CHOOSE AGAIN ! &#9989;
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger noBtn animate__animated btn-lg animate__lightSpeedInRight p5"
+            id="surrender-notplay-btn"
+          >
+            SURRENDER &#128148;
+          </button>
+        </div>
+      </section>
+
+      <!-- Play Game Section -->
+      <section id="section-play" class="section-play hidden">
+        <h1 class="p1 animate__animated animate__rotateInDownLeft">
+          FIRST TO 5 WIN THE GAME!
+        </h1>
+        <div class="row">
+          <p class="animate__animated animate__rotateInDownLeft p3">
+            ROUND <span class="round-count"></span>
+          </p>
+          <p class="animate__animated animate__rotateInDownLeft p3-1">
+            CHOOSE YOUR WEAPON:
+          </p>
+        </div>
+        <div class="ctn-buttons-weapon">
+          <button
+            type="button"
+            value="rock"
+            name="weapon"
+            class="btn btn-success p4 animate__animated animate__bounceInLeft btn-lg rockBtn"
+          >
+            &#9994;
+          </button>
+          <button
+            type="button"
+            value="paper"
+            name="weapon"
+            class="btn btn-danger p5 animate__animated animate__bounceInDown btn-lg paperBtn"
+          >
+            &#9995;
+          </button>
+          <button
+            type="button"
+            value="scissors"
+            name="weapon"
+            class="btn btn-info p6 animate__animated animate__bounceInRight btn-lg scissorsBtn"
+          >
+            &#9996;
+          </button>
+        </div>
+        <div class="ctn-results">
+          <div class="label label-you animate__animated animate__bounceInLeft">
+            You
+          </div>
+          <div class="label label-ai animate__animated animate__bounceInRight">
+            AI
+          </div>
+          <div
+            id="player-score"
+            class="score score-you animate__animated animate__bounceInLeft"
+          >
+            0
+          </div>
+          <div
+            id="ai-score"
+            class="score score-ai animate__animated animate__bounceInRight"
+          >
+            0
+          </div>
+          <div class="results"></div>
+        </div>
+      </section>
+
+      <!-- Win Section -->
+      <section id="section-win" class="section-win hidden">
+        <h1 class="p1 animate__animated animate__rotateInDownLeft">
+          HELL YEE ! YOU'VE WON !!!
+        </h1>
+        <div class="row">
+          <h2 class="animate__animated animate__rotateInDownLeft p3">
+            LET'S PLAy ONE MORE GAME
+          </h2>
+          <p class="animate__animated animate__rotateInDownLeft p3-1">
+            SHALL WE ?
+          </p>
+        </div>
+        <button
+          type="button"
+          class="btn btn-success p4 animate__animated animate__bounceInLeft btn-lg rockBtn"
+          id="play-again-win-btn"
+        >
+          PLAY AGAIN !
+        </button>
+      </section>
+
+      <!-- Lose Section -->
+      <section id="section-lose" class="section-lose hidden">
+        <h1 class="p1 animate__animated animate__rotateInDownLeft">
+          OH NO ! YOU'VE LOST ...
+        </h1>
+        <div class="row">
+          <h2 class="animate__animated animate__rotateInDownLeft p3">
+            LET'S HAVE A REMATCH,
+          </h2>
+          <p class="animate__animated animate__rotateInDownLeft p3-1">
+            RIGHT ?
+          </p>
+        </div>
+        <button
+          type="button"
+          class="btn btn-success p4 animate__animated animate__bounceInLeft btn-lg rockBtn"
+          id="play-again-lose-btn"
+        >
+          PLAY AGAIN !
+        </button>
+      </section>
+
+      <footer class="footer">
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg backBtn"
+          id="back-to-home-btn"
+        >
+          BACK TO HOME PAGE
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg surrBtn hidden"
+          id="surrender-play-btn"
+        >
+          SURRENDER BECAUSE <strong>AI</strong> IS TOO STRONG :)))
+        </button>
+      </footer>
     </div>
-    <script src="./assets/script/skip.js"></script>
+    <script src="./assets/script/script.js" defer></script>
   </body>
 </html>
+

@@ -1,114 +1,166 @@
-console.log("Hello World");
-("use strict");
+"use strict";
 
-const play = () => {
-  let computerSelection;
-  let playerSelection;
-  let playerScore = 0;
-  let computerScore = 0;
-  let index = 1; //index to show the round we play
-  const buttons = document.querySelectorAll(`button[name="weapon"]`);
-  // initialize variables
-  const getComputerChoice = () => {
-    const choices = ["rock", "paper", "scissors"];
-    return choices[Math.floor(Math.random() * 3)];
-  }; //FIXME
-  // defined function to get computer choice
-  const showPlayerScore = () => {
-    let playerScoreCtn = document.querySelector(".score-you");
-    playerScoreCtn.textContent = playerScore;
-  }; //to display player score
-  const showComputerScore = () => {
-    let computerScoreCtn = document.querySelector(".score-ai");
-    computerScoreCtn.textContent = computerScore;
-  }; //to display computer score
+let computerSelection;
+let playerSelection;
+let playerScore = 0;
+let computerScore = 0;
+let roundIndex = 1; // Renamed from 'index' to avoid confusion
 
-  const roundCount = () => {
-    document.querySelector(".round-count").innerHTML = index;
-  }; // to display round index
-  // when a button is clicked then play 1 round
+// DOM Elements
+const wrapper = document.getElementById("wrapper");
+const sectionHome = document.getElementById("section-home");
+const sectionNotPlay = document.getElementById("section-notplay");
+const sectionPlay = document.getElementById("section-play");
+const sectionWin = document.getElementById("section-win");
+const sectionLose = document.getElementById("section-lose");
+const backToHomeBtn = document.getElementById("back-to-home-btn");
+const surrenderPlayBtn = document.getElementById("surrender-play-btn");
 
-  buttons.forEach((buttons) => {
-    buttons.addEventListener("click", () => {
-      playerSelection = buttons.value;
-      // defined function to get player choice
-      playRound(playerSelection, computerSelection);
-      if (playerScore === 5) {
-        window.location.href = "./../pages/win.html"; //go to win page if player have won the game
-      }
-      if (computerScore === 5) {
-        window.location.href = "./../pages/lose.html"; //go to lose page if player have lost the game
-      }
-    });
+const playGameBtn = document.getElementById("play-game-btn");
+const notPlayGameBtn = document.getElementById("not-play-game-btn");
+const chooseAgainBtn = document.getElementById("choose-again-btn");
+const surrenderNotPlayBtn = document.getElementById("surrender-notplay-btn");
+const playAgainWinBtn = document.getElementById("play-again-win-btn");
+const playAgainLoseBtn = document.getElementById("play-again-lose-btn");
+
+const weaponButtons = document.querySelectorAll(`button[name="weapon"]`);
+const playerScoreCtn = document.getElementById("player-score");
+const computerScoreCtn = document.getElementById("ai-score");
+const roundCountSpan = document.querySelector(".round-count");
+const resultsDisplay = document.querySelector(".results");
+
+// Helper to show a section and hide others
+const showSection = (sectionToShow) => {
+  [sectionHome, sectionNotPlay, sectionPlay, sectionWin, sectionLose].forEach(section => {
+    section.classList.add("hidden");
   });
-  const playRound = (playerSelection, computerSelection) => {
-    computerSelection = getComputerChoice();
-    //assign random computer choice to computer selection
-    let string = "";
-    let result = ["Tie Game!", "You Win!", "You Lose!"];
-    let sentence = [
-      " Paper beats Rock",
-      " Rock beats Scissors",
-      " Scissors beats Paper",
-    ];
-    if (playerSelection == "rock") {
-      switch (computerSelection) {
-        case "rock":
-          string = result[0];
-          break;
-        case "paper":
-          string = result[2] + sentence[0];
-          break;
-        case "scissors":
-          string = result[1] + sentence[1];
-          break;
-      }
-    } else if (playerSelection == "paper") {
-      switch (computerSelection) {
-        case "paper":
-          string = result[0];
-          break;
-        case "rock":
-          string = result[1] + sentence[0];
-          break;
-        case "scissors":
-          string = result[2] + sentence[2];
-          break;
-      }
-    } else if (playerSelection == "scissors") {
-      switch (computerSelection) {
-        case "scissors":
-          string = result[0];
-          break;
-        case "paper":
-          string = result[1] + sentence[2];
-          break;
-        case "rock":
-          string = result[2] + sentence[1];
-          break;
-      }
-    }
-    const results = document.querySelector(".results");
-    results.innerHTML = string;
+  sectionToShow.classList.remove("hidden");
 
-    const increaseThings = () => {
-      //this function increase numbers and change computer choice to something else
-      if (string[4] == "W") {
-        playerScore = ++playerScore;
-        index = ++index;
-      } //you win score ++,round index ++
-      if (string[4] == "L") {
-        computerScore = ++computerScore;
-        index = ++index;
-      } //you lose computer score ++,round index ++
-      showPlayerScore();
-      showComputerScore();
-      roundCount(); //FIXME
-    };
-    increaseThings();
-
-    return string;
-  };
-  // defined function to play 1 round of the game
-  playRound(playerSelection, computerSelection);
+  // Show/hide surrender button based on section-play
+  if (sectionToShow === sectionPlay) {
+    surrenderPlayBtn.classList.remove("hidden");
+  } else {
+    surrenderPlayBtn.classList.add("hidden");
+  }
 };
+
+// Game Logic Functions
+const getComputerChoice = () => {
+  const choices = ["rock", "paper", "scissors"];
+  return choices[Math.floor(Math.random() * 3)];
+};
+
+const updateScoresDisplay = () => {
+  playerScoreCtn.textContent = playerScore;
+  computerScoreCtn.textContent = computerScore;
+  roundCountSpan.textContent = roundIndex;
+};
+
+const resetGame = () => {
+  playerScore = 0;
+  computerScore = 0;
+  roundIndex = 1;
+  resultsDisplay.textContent = "";
+  updateScoresDisplay();
+};
+
+const playRound = (playerSelection) => {
+  computerSelection = getComputerChoice();
+  let resultString = "";
+  let outcome = ""; // "win", "lose", "tie"
+
+  if (playerSelection === computerSelection) {
+    resultString = "Tie Game!";
+    outcome = "tie";
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    resultString = `You Win! ${playerSelection} beats ${computerSelection}`;
+    playerScore++;
+    outcome = "win";
+  } else {
+    resultString = `You Lose! ${computerSelection} beats ${playerSelection}`;
+    computerScore++;
+    outcome = "lose";
+  }
+
+  resultsDisplay.textContent = resultString;
+  roundIndex++;
+  updateScoresDisplay();
+
+  if (playerScore === 5) {
+    showSection(sectionWin);
+  } else if (computerScore === 5) {
+    showSection(sectionLose);
+  }
+};
+
+// Event Listeners
+playGameBtn.addEventListener("click", () => {
+  resetGame();
+  showSection(sectionPlay);
+});
+
+notPlayGameBtn.addEventListener("click", () => {
+  showSection(sectionNotPlay);
+});
+
+chooseAgainBtn.addEventListener("click", () => {
+  showSection(sectionHome);
+});
+
+surrenderNotPlayBtn.addEventListener("click", () => {
+  resetGame();
+  showSection(sectionLose); // Surrendering from "not play" leads to a loss
+});
+
+playAgainWinBtn.addEventListener("click", () => {
+  resetGame();
+  showSection(sectionPlay);
+});
+
+playAgainLoseBtn.addEventListener("click", () => {
+  resetGame();
+  showSection(sectionPlay);
+});
+
+backToHomeBtn.addEventListener("click", () => {
+  resetGame();
+  showSection(sectionHome);
+});
+
+surrenderPlayBtn.addEventListener("click", () => {
+  resetGame();
+  showSection(sectionLose); // Surrendering from "play" leads to a loss
+});
+
+weaponButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    playRound(button.value);
+  });
+});
+
+// Skip Animation Function (from skip.js)
+const skipAnime = () => {
+  const animatedElements = document.querySelectorAll(
+    `[class*="animate__animated"]`
+  ); // Select elements with class containing "animate__animated"
+  animatedElements.forEach((animatedElement) =>
+    animatedElement.classList.add("skip")
+  );
+};
+
+// Attach skipAnime to body events
+document.body.addEventListener("click", skipAnime);
+document.body.addEventListener("keydown", skipAnime);
+
+// Initial setup
+const init = () => {
+  showSection(sectionHome);
+  updateScoresDisplay();
+};
+
+// Run initial setup when DOM is fully loaded
+document.addEventListener("DOMContentLoaded", init);
